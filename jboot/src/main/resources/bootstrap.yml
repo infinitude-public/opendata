@@ -1,0 +1,14 @@
+spring:
+ application:
+  name: jenkin.boot
+ profiles:
+    active: dev
+
+# Allow Thymeleaf templates to be reloaded at dev time
+thymeleaf:
+  cache: false
+   
+server: 
+ error: 
+  whitelabel:
+   enabled: false
