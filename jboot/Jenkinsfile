@@ -20,7 +20,7 @@ node {
 		  Job Name: ${env.JOB_NAME}
         Thanks,
         DevOps Team
-        """, cc: '', from: '', replyTo: '', subject: "${env.JOB_NAME} Success", to: 'sirishmax@gmail.com'
+        """, cc: '', from: 'sirishmax@gmail.com', replyTo: '', subject: "${env.JOB_NAME} Success", to: 'sirishmax@gmail.com'
    
    }
 
