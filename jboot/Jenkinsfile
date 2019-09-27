@@ -1,0 +1,10 @@
+node {
+
+   stage('SCM check out') {
+      git 'https://github.com/infinitude-public/opendata.git'
+   
+   }
+
+
+
+}
