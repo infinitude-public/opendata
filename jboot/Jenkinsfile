@@ -11,6 +11,13 @@ node {
      sh "${mvnHome}/bin/mvn -f jboot/pom.xml clean package"
    }
    
+   stage('Deploy to Tomcat'){
+      
+      sshagent(['tomcat-dev']) {
+         sh 'scp -o StrictHostKeyChecking=no target/*.war vagrant@192.168.133.17:/opt/tomcat-8.5.16/webapps/'
+      }
+   }
+   
    
    stage('Email Notification'){
    
