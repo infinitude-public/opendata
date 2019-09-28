@@ -21,7 +21,7 @@ node {
         Thanks,
         DevOps Team
         """, subject: "${env.JOB_NAME} Success", to: 'sirishmax@gmail.com'
-		
+
    
    }
 
