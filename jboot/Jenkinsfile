@@ -12,7 +12,7 @@ node {
    }
    
    
-   stage('Email Notification'){
+   stage('Email Notification'){ 
    
        emailext body: """ Hi Team, 
 		  You build successfully deployed
