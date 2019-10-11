@@ -8,7 +8,7 @@ node {
    stage('Compile package') {
      // get maven home path
      def mvnHome = tool name: 'M3', type: 'maven'
-     sh "${mvnHome}/bin/mvn -f jboot/pom.xml clean package"
+     sh "${mvnHome}/bin/mvn -f jboot/pom.xml clean package" 
    }
    
 
