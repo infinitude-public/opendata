@@ -1,0 +1,35 @@
+node {
+
+   stage('SCM check out') {
+      git 'https://github.com/infinitude-public/opendata.git'
+   
+   }
+   
+   stage('Compile package') {
+     // get maven home path
+     def mvnHome = tool name: 'maven-3', type: 'maven'
+     sh "${mvnHome}/bin/mvn -f jboot/pom.xml clean package"
+   }
+   
+   stage('Deploy to Tomcat'){
+      
+      sshagent(['tomcat-dev']) {
+         sh 'scp -o StrictHostKeyChecking=no target/*.war vagrant@192.168.133.17:/opt/tomcat-8.5.16/webapps/'
+      }
+   }
+   
+   
+   stage('Email Notification'){ 
+   
+      emailext body: """ Hi Team, 
+		  You build successfully deployed 
+		  Job URL : ${env.JOB_URL}
+		  Job Name: ${env.JOB_NAME}
+        Thanks,
+        DevOps Team
+        """, subject: "${env.JOB_NAME} Success", to: 'sirishmax@gmail.com'
+   
+   }
+
+
+}
