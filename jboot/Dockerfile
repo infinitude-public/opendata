@@ -1,4 +1,5 @@
-FROM tomcat:8
-
-#take the war and copy to webapps of tomcat
-COPY jboot/target/*.war  /usr/local/tomcat/webapps
+FROM openjdk:8-alpine
+VOLUME /tmp
+ADD jboot/target/*.war /jboot.war
+RUN sh -c 'touch /jboot.war'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/jboot.war"]
