@@ -8,7 +8,7 @@ ENV REFRESHED_AT 2017-05-14
 VOLUME /tmp
 
 # Make port 8080 available to the world outside this container
-EXPOSE 8080
+#EXPOSE 8085
 
 ADD jboot/target/*.war app.war
 
