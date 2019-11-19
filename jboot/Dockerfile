@@ -1,4 +1,4 @@
-FROM openjdk:8-alpine
+FROM openjdk:8
 VOLUME /tmp
 ADD jboot/target/*.war /jboot.war
 RUN sh -c 'touch /jboot.war'
