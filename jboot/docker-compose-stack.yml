@@ -1,0 +1,15 @@
+version: '3'
+services:
+  jboot:
+    image: docker-server.com:5000/sirishmax/jboot:1.0.0
+    deploy:
+      replicas: 2
+    ports:
+        - "8087:8085"
+    
+       
+    
+ 
+      
+  
+      
