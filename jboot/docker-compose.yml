@@ -1,0 +1,13 @@
+version: '2'
+services:
+  config:
+    image: docker-server.com:5000/sirishmax/jboot:1.0.0
+    ports:
+        - "8087:8085"
+    
+       
+    
+ 
+      
+  
+      
