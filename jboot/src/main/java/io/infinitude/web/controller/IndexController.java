@@ -14,7 +14,7 @@ public class IndexController {
 
 	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
 	public String index(Model model) {
-		return "Hello World!";
+		return "Hello World Docker Swarm!";
 
 	}
 
